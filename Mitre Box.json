@@ -9,10 +9,7 @@
             "outer_spacing": "10",
             "wall_height": "10",
             "wall_strength": "3",
-            "cutout_angles":[
-                [90, 0],
-                [45, 20],
-                [135, 20]]
+            "cutout_angles": "[[90,0],[45,20],[135,20]]"
         },
         "Typical Wooden Mitre Box": {
             "base_height": "5",
@@ -22,10 +19,7 @@
             "outer_spacing": "30",
             "wall_height": "38",
             "wall_strength": "5",
-            "cutout_angles":[
-                [90, 0],
-                [45, 60],
-                [135, 60]]
+            "cutout_angles": "[[90,0],[45,60],[135,60]]"
         }
     }
 }
