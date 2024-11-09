@@ -18,9 +18,9 @@ cutout_groove = 1.0; //.1
 // Small value to prevent z-fighting
 epsilon = 1;
 
-_cutout_angles_list_no_whitespace = join(split(cutout_angles, " "), "");
-_cutout_angles_list_no_outer_brackets = str("],", substr(_cutout_angles_list_no_whitespace, 1, len(_cutout_angles_list_no_whitespace) - 1), ",[");
-_cutout_angles_parsed = [ for (i = split(_cutout_angles_list_no_outer_brackets, "],[")) if (len(i) >0) [for (j = split(i, ",")) float(j)]];
+_cutout_angles_no_whitespace = join(split(cutout_angles, " "), "");
+_cutout_angles_no_outer_brackets = str("],", substr(_cutout_angles_no_whitespace, 1, len(_cutout_angles_no_whitespace) - 1), ",[");
+_cutout_angles_parsed = [ for (i = split(_cutout_angles_no_outer_brackets, "],[")) if (len(i) >0) [for (j = split(i, ",")) float(j)]];
 
 _total_width = inner_width + 2 * wall_strength;
 
@@ -29,9 +29,6 @@ function calc_width(angle, length) = sin(angle) * length / 2;
 function get_max_x_dimention(_cutout_angles_parsed, maximum=0, idx=0) = idx < len(_cutout_angles_parsed) - 1 ? max(maximum, get_max_x_dimention(_cutout_angles_parsed, maximum, idx + 1)) : _cutout_angles_parsed[idx][1] + (sin((_cutout_angles_parsed[idx][0] % 180) - 90) * _total_width / cos((_cutout_angles_parsed[idx][0] % 180) - 90) / 2) + (cutout_width);
 
 length = 2 * outer_spacing + get_max_x_dimention(_cutout_angles_parsed);
-echo(length);
-
-
 
 module angle_cutouts(_cutout_angles_parsed, idx=0) {
     if(idx < len(_cutout_angles_parsed) - 1) {
