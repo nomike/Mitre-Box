@@ -1,0 +1,31 @@
+{
+    "fileFormatVersion": "1",
+    "parameterSets": {
+        "LED Aluminium Channel": {
+            "base_height": "2",
+            "cutout_groove": "0.5",
+            "cutout_width": "1",
+            "inner_width": "17.5",
+            "outer_spacing": "10",
+            "wall_height": "10",
+            "wall_strength": "3",
+            "cutout_angles":[
+                [90, 0],
+                [45, 20],
+                [135, 20]]
+        },
+        "Typical Wooden Mitre Box": {
+            "base_height": "5",
+            "cutout_groove": "1",
+            "cutout_width": "2",
+            "inner_width": "65",
+            "outer_spacing": "30",
+            "wall_height": "38",
+            "wall_strength": "5",
+            "cutout_angles":[
+                [90, 0],
+                [45, 60],
+                [135, 60]]
+        }
+    }
+}
