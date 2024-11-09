@@ -16,7 +16,7 @@ cutout_groove = 1.0; //.1
 
 /* [Hidden] */
 // Small value to prevent z-fighting
-epsilon = 0.001;
+epsilon = 1;
 
 _cutout_angles_list_no_whitespace = join(split(cutout_angles, " "), "");
 _cutout_angles_list_no_outer_brackets = str("],", substr(_cutout_angles_list_no_whitespace, 1, len(_cutout_angles_list_no_whitespace) - 1), ",[");
